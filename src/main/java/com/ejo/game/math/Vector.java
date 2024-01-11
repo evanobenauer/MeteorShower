@@ -40,7 +40,6 @@ public class Vector {
     }
 
 
-
     public double getX() {
         return x;
     }
@@ -51,5 +50,10 @@ public class Vector {
 
     public double getZ() {
         return z;
+    }
+
+    @Override
+    public String toString() {
+        return "<" + getX() + ", " + getY() + ", " + getZ() + ">";
     }
 }

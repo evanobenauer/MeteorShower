@@ -1,7 +1,7 @@
 package com.ejo.game.entity;
 
 import com.ejo.game.math.Vector;
-import com.ejo.game.shape.Rectangle;
+import com.ejo.game.component.Rectangle;
 
 import java.awt.*;
 
@@ -35,8 +35,8 @@ public abstract class PhysicsRect {
         this(size,color,mass,position,Vector.NULL,Vector.NULL);
     }
 
-    public void render() {
-        getRectangle().render(getPos());
+    public void draw(Graphics2D graphics) {
+        getRectangle().draw(graphics, getPos());
     }
 
 
@@ -77,6 +77,10 @@ public abstract class PhysicsRect {
 
     public void setNetForce(Vector netForce) {
         this.netForce = netForce;
+    }
+
+    public void addForce(Vector force) {
+        setNetForce(getNetForce().getAdded(force));
     }
 
     public void setDeltaT(float deltaT) {
