@@ -34,6 +34,8 @@ public class Player extends PhysicsRectangle {
 
         updateKinematics();
 
+        updateWallBounds();
+
         capSpeed();
     }
 
@@ -45,6 +47,20 @@ public class Player extends PhysicsRectangle {
             addForce(new Vector(0,-getNetForce().getY())); //Add normal force from ground
         } else {
             onGround = false;
+        }
+    }
+
+    public void updateWallBounds() {
+        //Left Wall
+        if (getPos().getX() < 0) {
+            setVelocity(new Vector(0,getVelocity().getY()));
+            setPos(new Vector(0, getPos().getY()));
+        }
+
+        //Right Wall TODO: Fix this it isnt working right?
+        if (getPos().getX() + getSize().getX() + 16 > App.WINDOW.getSize().getX()) {
+            setVelocity(new Vector(0,getVelocity().getY()));
+            setPos(new Vector(App.WINDOW.getSize().getX() - getSize().getX() - 16,getPos().getY()));
         }
     }
 
@@ -77,8 +93,10 @@ public class Player extends PhysicsRectangle {
 
         //Kinetic Friction
         double kineticForce = coefficient * Math.abs(getNetForce().getY());
-        if (getVelocity().getX() > 0) kineticForce *= -1;
-        if (getVelocity().getX() == 0 && getNetForce().getX() > 0) kineticForce *= -1;
+        boolean velocityPositive = getVelocity().getX() > 0;
+        boolean forcePositive = getVelocity().getX() == 0 && getNetForce().getX() > 0;
+        if (velocityPositive || forcePositive) //Decides the sign of the friction force
+            kineticForce *= -1;
         addForce(new Vector(kineticForce,0));
 
     }
