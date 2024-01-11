@@ -19,7 +19,7 @@ public class TitleScene extends Scene {
     public TitleScene() {
         super("Title Scene");
         this.mainButton = new JButton("Start!");
-        this.title = new Text("Meteor Shower",new Font("Arial Black",Font.BOLD,50),Color.YELLOW);
+        this.title = new Text("Meteor Shower",new Font("Arial",Font.BOLD,50),Color.YELLOW);
         initStartButton();
         addSwingComponents(mainButton);
         background.initStarPositions();

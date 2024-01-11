@@ -20,9 +20,9 @@ public class Text implements Drawable {
 
     @Override
     public void draw(Graphics2D graphics, Vector pos) {
-        graphics.setColor(getColor());
-        graphics.setFont(new Font("Arial",Font.PLAIN,50));
-        graphics.drawString(getString(),(int)pos.getX(),(int)pos.getY());
+        graphics.setColor(color);
+        graphics.setFont(font);
+        graphics.drawString(string,(int)pos.getX(),(int)pos.getY());
         updateTextSize(graphics);
         graphics.setColor(new Color(255,255,255,255));
     }
