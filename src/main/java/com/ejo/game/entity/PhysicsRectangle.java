@@ -5,9 +5,7 @@ import com.ejo.game.component.Rectangle;
 
 import java.awt.*;
 
-public abstract class PhysicsRect {
-
-    private final Rectangle rectangle;
+public abstract class PhysicsRectangle extends Rectangle {
 
     private double mass;
 
@@ -18,8 +16,8 @@ public abstract class PhysicsRect {
 
     private float deltaT;
 
-    public PhysicsRect(Vector size, Color color, double mass, Vector position, Vector velocity, Vector netForce) {
-        this.rectangle = new Rectangle(size,color);
+    public PhysicsRectangle(Vector size, Color color, double mass, Vector position, Vector velocity, Vector netForce) {
+        super(size,color);
 
         this.mass = mass;
 
@@ -31,14 +29,9 @@ public abstract class PhysicsRect {
         this.deltaT = .1f;
     }
 
-    public PhysicsRect(Vector size, Color color, double mass, Vector position) {
+    public PhysicsRectangle(Vector size, Color color, double mass, Vector position) {
         this(size,color,mass,position,Vector.NULL,Vector.NULL);
     }
-
-    public void draw(Graphics2D graphics) {
-        getRectangle().draw(graphics, getPos());
-    }
-
 
     public void updateKinematics() {
         setAcceleration(getNetForce().getMultiplied(1 / getMass()));
@@ -48,9 +41,9 @@ public abstract class PhysicsRect {
     }
 
 
-    private boolean isColliding(PhysicsRect rect) {
-        boolean isXColliding = (rect.getPos().getX() + rect.getRectangle().getSize().getX() >= getPos().getX() && rect.getPos().getX() <= getPos().getX() + getRectangle().getSize().getX());
-        boolean isYColliding = (rect.getPos().getY() + rect.getRectangle().getSize().getY() >= getPos().getY() && rect.getPos().getY() <= getPos().getY() + getRectangle().getSize().getY());
+    private boolean isColliding(PhysicsRectangle rect) {
+        boolean isXColliding = (rect.getPos().getX() + rect.getSize().getX() >= getPos().getX() && rect.getPos().getX() <= getPos().getX() + getSize().getX());
+        boolean isYColliding = (rect.getPos().getY() + rect.getSize().getY() >= getPos().getY() && rect.getPos().getY() <= getPos().getY() + getSize().getY());
         return isXColliding && isYColliding;
     }
 
@@ -97,7 +90,7 @@ public abstract class PhysicsRect {
     }
 
     public Vector getCenter() {
-        return getPos().getAdded(getRectangle().getSize().getMultiplied(.5f));
+        return getPos().getAdded(getSize().getMultiplied(.5f));
     }
 
     public Vector getVelocity() {
@@ -114,10 +107,6 @@ public abstract class PhysicsRect {
 
     public float getDeltaT() {
         return deltaT;
-    }
-
-    public Rectangle getRectangle() {
-        return rectangle;
     }
 
 }

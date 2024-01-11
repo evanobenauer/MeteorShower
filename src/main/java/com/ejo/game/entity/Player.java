@@ -6,7 +6,7 @@ import com.ejo.game.math.Vector;
 
 import java.awt.*;
 
-public class Player extends PhysicsRect {
+public class Player extends PhysicsRectangle {
 
     private boolean spawned;
 
@@ -58,9 +58,9 @@ public class Player extends PhysicsRect {
 
     private void updateGroundCollision() {
         int groundY = 500;
-        if (getPos().getY() + getRectangle().getSize().getY() >= groundY) {
+        if (getPos().getY() + getSize().getY() >= groundY) {
             onGround = true;
-            setPos(new Vector(getPos().getX(),groundY - getRectangle().getSize().getY())); //Set Y on ground
+            setPos(new Vector(getPos().getX(),groundY - getSize().getY())); //Set Y on ground
             setVelocity(new Vector(getVelocity().getX(),0)); //Set velocity to 0
             addForce(new Vector(0,-getNetForce().getY())); //Add normal force from ground
         } else {

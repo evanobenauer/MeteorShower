@@ -44,7 +44,7 @@ public class GameScene extends Scene {
 
         player.update();
 
-        player.draw(graphics);
+        player.draw(graphics,player.getPos());
     }
 
 

@@ -22,15 +22,13 @@ public class Rectangle implements Drawable {
 
     @Override
     public void draw(Graphics2D graphics, Vector pos) {
-        int transX = (int)pos.getX();
-        int transY = (int)pos.getY();
-        graphics.translate(transX, transY);
-        graphics.rotate(getAngle());
-        graphics.setColor(getColor());
-        graphics.fillRect(0, 0, (int) getSize().getX(), (int) getSize().getY());
+        graphics.translate((int)pos.getX(), (int)pos.getY());
+        graphics.rotate(angle);
+        graphics.setColor(color);
+        graphics.fillRect(0, 0, (int) size.getX(), (int) size.getY());
         graphics.setColor(new Color(255, 255, 255, 255));
-        graphics.rotate(-getAngle());
-        graphics.translate(-transX, -transY);
+        graphics.rotate(-angle);
+        graphics.translate(-(int)pos.getX(), -(int)pos.getY());
     }
 
     public Vector getSize() {
