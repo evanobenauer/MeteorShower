@@ -27,6 +27,7 @@ public class TitleScene extends Scene {
 
     @Override
     public void draw(Graphics2D graphics) {
+        setMainButtonLocation();
         background.draw(graphics,Vector.NULL);
         drawSineTitle(graphics);
     }
@@ -36,9 +37,13 @@ public class TitleScene extends Scene {
         sinStep += .075;
     }
 
+    private void setMainButtonLocation() {
+        mainButton.setLocation((int)(getWindow().getSize().getX() / 2 - mainButton.getWidth() / 2), (int)(getWindow().getSize().getY() / 2 - mainButton.getHeight() / 2) + 10);
+    }
+
     private void initStartButton() {
         mainButton.setSize(200, 50);
-        mainButton.setLocation((int)(getWindow().getSize().getX() / 2 - mainButton.getWidth() / 2), (int)(getWindow().getSize().getY() / 2 - mainButton.getHeight() / 2) + 10);
+        setMainButtonLocation();
         mainButton.setFont(new Font("Arial",Font.PLAIN,30));
         mainButton.addActionListener(action -> getWindow().setScene(new GameScene()));
     }
