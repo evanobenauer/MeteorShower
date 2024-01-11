@@ -18,6 +18,7 @@ public class Ground implements Drawable {
     public Ground(int yPos, int rockCount) {
         this.yPos = yPos;
         this.rockCount = rockCount;
+        initRockPositions();
     }
 
     @Override
@@ -30,11 +31,14 @@ public class Ground implements Drawable {
         }
     }
 
-    public void initRockPositions() {
+    private void initRockPositions() {
         Random random = new Random();
         for (int i = 0; i < 30; i++) {
             rockPosList.add(new Vector(random.nextInt((int)App.WINDOW.getSize().getX()), random.nextInt((int)App.WINDOW.getSize().getY() - 500) + 500));
         }
     }
 
+    public int getY() {
+        return yPos;
+    }
 }

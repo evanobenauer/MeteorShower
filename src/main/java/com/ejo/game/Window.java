@@ -6,6 +6,9 @@ import com.ejo.game.scenes.Scene;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The Window class acts as a container for a simple JFrame & JPanel combination.
+ */
 public class Window {
 
     private final JFrame frame;

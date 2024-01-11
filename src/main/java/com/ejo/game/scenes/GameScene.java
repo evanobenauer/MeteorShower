@@ -2,15 +2,18 @@ package com.ejo.game.scenes;
 
 import com.ejo.game.component.Background;
 import com.ejo.game.component.Ground;
-import com.ejo.game.component.Text;
+import com.ejo.game.entity.Meteor;
 import com.ejo.game.entity.Player;
 import com.ejo.game.math.QuickTimer;
 import com.ejo.game.math.Vector;
 import com.ejo.game.component.Rectangle;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class GameScene extends Scene {
+
+    private final ArrayList<Meteor> meteorList;
 
     private final QuickTimer countdownTimer;
 
@@ -18,17 +21,20 @@ public class GameScene extends Scene {
 
     private boolean started;
 
-    private final Background background = new Background(100,10);
-    private final Ground ground = new Ground(500,30);
-
-    private final Player player = new Player(new Vector(-100,-100));
+    private final Background background;
+    private final Ground ground;
+    private final Player player;
 
     public GameScene() {
         super("Game Scene");
         this.countdownTimer = new QuickTimer();
         this.started = false;
-        background.initStarPositions();
-        ground.initRockPositions();
+
+        this.meteorList = new ArrayList<>();
+
+        this.background = new Background(100,10);
+        this.ground = new Ground(500,30);
+        this.player = new Player(new Vector(-100,-100));
     }
 
     @Override
@@ -43,6 +49,7 @@ public class GameScene extends Scene {
         if (!player.hasSpawned()) player.spawn();
 
         player.update();
+        player.updateGroundCollision(ground);
 
         player.draw(graphics,player.getPos());
     }
@@ -51,8 +58,8 @@ public class GameScene extends Scene {
     private void countdownStart(Graphics2D graphics) {
         countdownTimer.start();
         if (!started) {
-            Text text = new Text(String.valueOf(countdown),new Font("Arial", Font.PLAIN, 50),Color.WHITE);
-            text.draw(graphics,new Vector(getWindow().getSize().getX() / 2 - text.getSize().getX() / 2, getWindow().getSize().getY() / 2 - text.getSize().getY() / 2));
+            graphics.setFont(new Font("Arial", Font.PLAIN, 50));
+            graphics.drawString(String.valueOf(countdown), (int) getWindow().getSize().getX() / 2, (int) getWindow().getSize().getY() / 2);
         }
         if (countdownTimer.hasTimePassed(1000) && countdown >= 0) {
             if (countdown == 0) {

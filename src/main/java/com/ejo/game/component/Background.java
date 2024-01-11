@@ -18,16 +18,7 @@ public class Background implements Drawable {
     public Background(int starCount, int streakCount) {
         this.starCount = starCount;
         this.streakCount = streakCount;
-    }
-
-    public void initStarPositions() {
-        Random random = new Random();
-        for (int i = 0; i < starCount; i++) {
-            starPosList.add(new Vector(random.nextInt((int)App.WINDOW.getSize().getX()), random.nextInt((int)App.WINDOW.getSize().getY())));
-        }
-        for (int i = 0; i < starCount; i++) {
-            streakPosList.add(new Vector(random.nextInt((int)App.WINDOW.getSize().getX()), random.nextInt((int)App.WINDOW.getSize().getY())));
-        }
+        initStarPositions();
     }
 
     @Override
@@ -36,13 +27,23 @@ public class Background implements Drawable {
         background.draw(graphics, Vector.NULL);
 
         for (int i = 0; i < starCount; i++) {
-            Rectangle star = new Rectangle(new Vector(2,2), Color.WHITE,Math.PI / 4);
+            Rectangle star = new Rectangle(new Vector(2,2), Color.WHITE,0);
             star.draw(graphics, starPosList.get(i));
         }
 
         for (int i = 0; i < streakCount; i++) {
             Rectangle star = new Rectangle(new Vector(20,2), Color.WHITE,Math.PI / 4);
             star.draw(graphics, streakPosList.get(i));
+        }
+    }
+
+    private void initStarPositions() {
+        Random random = new Random();
+        for (int i = 0; i < starCount; i++) {
+            starPosList.add(new Vector(random.nextInt((int)App.WINDOW.getSize().getX()), random.nextInt((int)App.WINDOW.getSize().getY())));
+        }
+        for (int i = 0; i < starCount; i++) {
+            streakPosList.add(new Vector(random.nextInt((int)App.WINDOW.getSize().getX()), random.nextInt((int)App.WINDOW.getSize().getY())));
         }
     }
 

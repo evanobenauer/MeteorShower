@@ -1,6 +1,7 @@
 package com.ejo.game.entity;
 
 import com.ejo.game.App;
+import com.ejo.game.component.Ground;
 import com.ejo.game.input.Key;
 import com.ejo.game.math.Vector;
 
@@ -18,6 +19,11 @@ public class Player extends PhysicsRectangle {
         this.spawned = false;
     }
 
+    public void spawn() {
+        Vector midPos = App.WINDOW.getSize().getMultiplied(.5);
+        setPos(new Vector(midPos.getX(),450));
+        this.spawned = true;
+    }
 
     public void update() {
         updateGravity(9.8f * 10);
@@ -28,15 +34,18 @@ public class Player extends PhysicsRectangle {
 
         updateKinematics();
 
-        updateGroundCollision();
-
         capSpeed();
     }
 
-    public void spawn() {
-        Vector midPos = App.WINDOW.getSize().getMultiplied(.5);
-        setPos(new Vector(midPos.getX(),450));
-        this.spawned = true;
+    public void updateGroundCollision(Ground ground) {
+        if (getPos().getY() + getSize().getY() >= ground.getY()) {
+            onGround = true;
+            setPos(new Vector(getPos().getX(),ground.getY() - getSize().getY())); //Set Y on ground
+            setVelocity(new Vector(getVelocity().getX(),0)); //Set velocity to 0
+            addForce(new Vector(0,-getNetForce().getY())); //Add normal force from ground
+        } else {
+            onGround = false;
+        }
     }
 
     public void updateControl() {
@@ -55,19 +64,6 @@ public class Player extends PhysicsRectangle {
         if (Key.KEY_D.isKeyDown() || Key.KEY_RIGHT.isKeyDown())
             addForce(new Vector(hForce, 0));
     }
-
-    private void updateGroundCollision() {
-        int groundY = 500;
-        if (getPos().getY() + getSize().getY() >= groundY) {
-            onGround = true;
-            setPos(new Vector(getPos().getX(),groundY - getSize().getY())); //Set Y on ground
-            setVelocity(new Vector(getVelocity().getX(),0)); //Set velocity to 0
-            addForce(new Vector(0,-getNetForce().getY())); //Add normal force from ground
-        } else {
-            onGround = false;
-        }
-    }
-
 
     private void updateFriction(float coefficient) {
         //Static Friction

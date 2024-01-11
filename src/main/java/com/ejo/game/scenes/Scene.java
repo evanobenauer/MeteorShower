@@ -6,6 +6,10 @@ import com.ejo.game.Window;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The Scene class acts as a "joint" between java swing and the game. I am not the biggest fan on swing
+ * so we now have the scene :)
+ */
 public abstract class Scene {
 
     private final String title;
