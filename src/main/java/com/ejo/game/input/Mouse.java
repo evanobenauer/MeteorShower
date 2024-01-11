@@ -12,11 +12,9 @@ public class Mouse {
     public static final int ACTION_CLICK = 1;
     public static final int ACTION_RELEASE = 0;
 
-
     public static final Mouse BUTTON_LEFT = new Mouse(1);
     public static final Mouse BUTTON_RIGHT = new Mouse(3);
     public static final Mouse BUTTON_MIDDLE = new Mouse(2);
-
 
     //------------------------------------------
 
@@ -28,10 +26,10 @@ public class Mouse {
         LIST_BUTTONS.put(id,this);
     }
 
-    public void update(int key, int action) {
+    public void update(int key, int state) {
         if (getId() == key) {
-            if (action == ACTION_CLICK) setButtonDown(true);
-            if (action == ACTION_RELEASE) setButtonDown(false);
+            if (state == ACTION_CLICK) setButtonDown(true);
+            if (state == ACTION_RELEASE) setButtonDown(false);
         }
     }
 

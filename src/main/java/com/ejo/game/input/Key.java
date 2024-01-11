@@ -11,7 +11,6 @@ public class Key {
 
     public static final int ACTION_PRESS = 1;
     public static final int ACTION_RELEASE = 0;
-    public static final int ACTION_HOLD = 2;
 
     public static final Key KEY_W = new Key(87);
     public static final Key KEY_A = new Key(65);
@@ -25,7 +24,6 @@ public class Key {
 
     public static final Key KEY_SPACE = new Key(32);
 
-
     //------------------------------------------
 
     private final int id;
@@ -38,7 +36,7 @@ public class Key {
 
     public void update(int key, int state) {
         if (getId() == key) {
-            if (state == ACTION_PRESS || state == ACTION_HOLD) setKeyDown(true);
+            if (state == ACTION_PRESS) setKeyDown(true);
             if (state == ACTION_RELEASE) setKeyDown(false);
         }
     }
