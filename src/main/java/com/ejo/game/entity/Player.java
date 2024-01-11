@@ -13,7 +13,7 @@ public class Player extends PhysicsRectangle {
     private boolean onGround;
 
     public Player(Vector pos) {
-        super(new Vector(10,10), Color.GREEN, 10, pos,Vector.NULL, Vector.NULL);
+        super(new Vector(10,10), Color.GREEN, 10, pos);
         this.onGround = false;
         this.spawned = false;
     }
@@ -40,8 +40,8 @@ public class Player extends PhysicsRectangle {
     }
 
     public void updateControl() {
-        int hForce = 600;
-        if (!onGround) hForce /= 10;
+        int hForce = 300;
+        if (!onGround) hForce /= 5;
 
         //Jump
         if (onGround && (Key.KEY_SPACE.isKeyDown() || Key.KEY_W.isKeyDown() || Key.KEY_UP.isKeyDown()))
@@ -71,8 +71,10 @@ public class Player extends PhysicsRectangle {
 
     private void updateFriction(float coefficient) {
         //Static Friction
-        if (Math.abs(getVelocity().getX()) <= 0) {
+        if (Math.abs(getVelocity().getX()) <= 1) {
+            //if the X force is less than the static friction force
             if (Math.abs(getNetForce().getX()) < coefficient * Math.abs(getNetForce().getY())) {
+                setVelocity(new Vector(0,getVelocity().getY())); //Stops player if static friction is active
                 return; //If static friction passes, do NOT apply any new friction forces
             }
         }
