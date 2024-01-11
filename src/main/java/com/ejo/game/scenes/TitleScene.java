@@ -1,8 +1,8 @@
 package com.ejo.game.scenes;
 
-import com.ejo.game.component.Background;
+import com.ejo.game.render.Background;
 import com.ejo.game.math.Vector;
-import com.ejo.game.component.Text;
+import com.ejo.game.render.Text;
 
 import javax.swing.*;
 import java.awt.*;

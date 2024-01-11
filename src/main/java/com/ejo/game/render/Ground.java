@@ -1,4 +1,4 @@
-package com.ejo.game.component;
+package com.ejo.game.render;
 
 import com.ejo.game.App;
 import com.ejo.game.math.Vector;

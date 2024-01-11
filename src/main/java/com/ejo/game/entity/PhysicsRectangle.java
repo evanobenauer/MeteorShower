@@ -1,7 +1,7 @@
 package com.ejo.game.entity;
 
 import com.ejo.game.math.Vector;
-import com.ejo.game.component.Rectangle;
+import com.ejo.game.render.Rectangle;
 
 import java.awt.*;
 

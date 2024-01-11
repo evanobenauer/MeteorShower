@@ -1,7 +1,7 @@
 package com.ejo.game.entity;
 
 import com.ejo.game.App;
-import com.ejo.game.component.Ground;
+import com.ejo.game.render.Ground;
 import com.ejo.game.input.Key;
 import com.ejo.game.math.Vector;
 
@@ -57,7 +57,7 @@ public class Player extends PhysicsRectangle {
             setPos(new Vector(0, getPos().getY()));
         }
 
-        //Right Wall TODO: Fix this it isnt working right?
+        //Right Wall
         if (getPos().getX() + getSize().getX() + 16 > App.WINDOW.getSize().getX()) {
             setVelocity(new Vector(0,getVelocity().getY()));
             setPos(new Vector(App.WINDOW.getSize().getX() - getSize().getX() - 16,getPos().getY()));
