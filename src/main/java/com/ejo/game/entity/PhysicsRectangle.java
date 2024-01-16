@@ -40,14 +40,6 @@ public abstract class PhysicsRectangle extends Rectangle {
         setNetForce(Vector.NULL);
     }
 
-
-    private boolean isColliding(PhysicsRectangle rect) {
-        boolean isXColliding = (rect.getPos().getX() + rect.getSize().getX() >= getPos().getX() && rect.getPos().getX() <= getPos().getX() + getSize().getX());
-        boolean isYColliding = (rect.getPos().getY() + rect.getSize().getY() >= getPos().getY() && rect.getPos().getY() <= getPos().getY() + getSize().getY());
-        return isXColliding && isYColliding;
-    }
-
-
     public void setMass(double mass) {
         this.mass = mass;
     }

@@ -112,6 +112,12 @@ public class Player extends PhysicsRectangle {
         if (getVelocity().getX() < -bound) setVelocity(new Vector(-bound, getVelocity().getY()));
     }
 
+    public boolean isCollidingMeteor(Meteor meteor) {
+        Vector centerOffset = meteor.getSize().getMultiplied(-.5);
+        boolean isXColliding = (meteor.getPos().getX() + centerOffset.getX() + meteor.getSize().getX() >= getPos().getX() && meteor.getPos().getX() + centerOffset.getX() <= getPos().getX() + getSize().getX());
+        boolean isYColliding = (meteor.getPos().getY() + centerOffset.getY() + meteor.getSize().getY() >= getPos().getY() && meteor.getPos().getY() + centerOffset.getY() <= getPos().getY() + getSize().getY());
+        return isXColliding && isYColliding;
+    }
 
     public boolean isOnGround() {
         return onGround;

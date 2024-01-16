@@ -8,6 +8,7 @@ import com.ejo.game.entity.Player;
 import com.ejo.game.math.QuickTimer;
 import com.ejo.game.math.Vector;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -18,6 +19,7 @@ public class GameScene extends Scene {
     private int countdown = 3;
 
     private boolean started;
+    private boolean gameOver;
 
     private final ArrayList<Meteor> meteorList;
 
@@ -31,6 +33,7 @@ public class GameScene extends Scene {
         super("Game Scene");
         this.countdownTimer = new QuickTimer();
         this.started = false;
+        this.gameOver = false;
 
         this.meteorList = new ArrayList<>();
 
@@ -48,6 +51,7 @@ public class GameScene extends Scene {
         countdownStart(graphics);
 
         if (!started) return;
+        if (gameOver) return;
 
         managePlayer(graphics);
 
@@ -71,6 +75,15 @@ public class GameScene extends Scene {
         for (Meteor meteor : meteorList) {
             meteor.update();
             meteor.draw(graphics2D,meteor.getPos());
+            if(player.isCollidingMeteor(meteor) && !gameOver) {
+                gameOver = true;
+                JButton retryButton = new JButton("Retry!");
+                retryButton.setSize(200, 50);
+                retryButton.setLocation((int)(getWindow().getSize().getX() / 2 - retryButton.getWidth() / 2), (int)(getWindow().getSize().getY() / 2 - retryButton.getHeight() / 2) + 10);
+                retryButton.setFont(new Font("Arial",Font.PLAIN,30));
+                retryButton.addActionListener(action -> getWindow().setScene(new GameScene()));
+                addSwingComponents(retryButton);
+            }
         }
     }
 

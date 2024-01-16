@@ -18,13 +18,14 @@ public class Meteor extends PhysicsRectangle {
 
     @Override
     public void draw(Graphics2D graphics, Vector pos) {
+        Vector centerOffset = getSize().getMultiplied(-.5);
+
         graphics.translate((int)pos.getX(), (int)pos.getY());
         graphics.rotate(getAngle());
         graphics.setColor(getColor());
 
-        Vector center = getSize().getMultiplied(-.5);
+        graphics.fillRect((int)centerOffset.getX(), (int)centerOffset.getY(), (int) getSize().getX(), (int) getSize().getY());
 
-        graphics.fillRect((int)center.getX(), (int)center.getY(), (int) getSize().getX(), (int) getSize().getY());
         graphics.setColor(new Color(255, 255, 255, 255));
         graphics.rotate(-getAngle());
         graphics.translate(-(int)pos.getX(), -(int)pos.getY());
