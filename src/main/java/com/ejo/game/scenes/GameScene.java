@@ -40,7 +40,7 @@ public class GameScene extends Scene {
         this.background = new Background(100,10);
         this.ground = new Ground(500,30);
         this.player = new Player(new Vector(-100,-100));
-        this.meteorSpawner = new MeteorSpawner();
+        this.meteorSpawner = new MeteorSpawner(meteorList);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class GameScene extends Scene {
 
     //TODO: Delete meteors when they hit the ground, Add an explosion animation too
     private void manageMeteors(Graphics2D graphics2D) {
-        meteorSpawner.spawnMeteors(meteorList,0,10,500);
+        meteorSpawner.spawnMeteors(0,10,500);
 
         for (Meteor meteor : meteorList) {
             meteor.update();

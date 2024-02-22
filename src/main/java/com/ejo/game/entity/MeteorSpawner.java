@@ -11,24 +11,27 @@ public class MeteorSpawner {
 
     private final Random random;
 
+    private final ArrayList<Meteor> meteorList;
+
     private final QuickTimer spawnTimer;
 
-    public MeteorSpawner() {
+    public MeteorSpawner(ArrayList<Meteor> meteorList) {
         this.random = new Random();
         this.spawnTimer = new QuickTimer();
+        this.meteorList = meteorList;
     }
 
-    public void spawnMeteors(ArrayList<Meteor> meteorList, int minCount, int maxCount, int ms) {
+    public void spawnMeteors(int minCount, int maxCount, int ms) {
         spawnTimer.start();
         if (spawnTimer.hasTimePassed(ms)) {
             for (int i = 0; i < random.nextInt(maxCount - minCount) + minCount; i++) {
-                spawnMeteor(meteorList);
+                spawnMeteor();
             }
             spawnTimer.restart();
         }
     }
 
-    public void spawnMeteor(ArrayList<Meteor> meteorList) {
+    public void spawnMeteor() {
         Vector position = new Vector(random.nextInt((int) App.WINDOW.getSize().getX()), -50);
         int size = random.nextInt(30 - 10) + 10;
         Vector velocity = new Vector(random.nextInt(10) * (random.nextBoolean() ? 1 : -1), 20);
