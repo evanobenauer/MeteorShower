@@ -1,5 +1,5 @@
 Meteor Shower is a little game made using Java Swing UI
 
 You are little green cube! Your goal? Avoid the falling, spinning meteors coming your way!
-![Screenshot](titleScreen_MS.jpg)
-![Screenshot](gamePlayer.jpg)
+![Screenshot](img/titleScreen_MS.jpg)
+![Screenshot](img/gamePlayer.jpg)
