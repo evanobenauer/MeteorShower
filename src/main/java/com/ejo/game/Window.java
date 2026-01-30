@@ -27,11 +27,7 @@ public class Window {
             protected void paintComponent(Graphics g) {
                 requestFocus(true);
                 super.paintComponent(g);
-                try {
-                    getScene().draw((Graphics2D) g);
-                } catch (NullPointerException e) {
-                    e.printStackTrace();
-                }
+                if (getScene() != null) getScene().draw((Graphics2D) g);
             }
         };
 

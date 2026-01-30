@@ -28,6 +28,7 @@ public class TitleScene extends Scene {
 
     @Override
     public void draw(Graphics2D graphics) {
+        mainButton.setLocation((int)(getWindow().getSize().getX() / 2 - mainButton.getWidth() / 2), (int)(getWindow().getSize().getY() / 2 - mainButton.getHeight() / 2) + 10);
         background.draw(graphics,Vector.NULL);
         drawSineTitle(graphics);
     }
