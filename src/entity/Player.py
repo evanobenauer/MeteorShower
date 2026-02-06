@@ -25,7 +25,7 @@ class Player(SquarePhysicsEntity, Interactable):
         #Update Forces
         self.update_gravity(15)
         if self.on_ground:
-            self.update_friction(1)
+            self.update_friction(2)
 
         #Update Collisions
         self.update_ground_collision(ground_y)
@@ -67,7 +67,7 @@ class Player(SquarePhysicsEntity, Interactable):
     # ======================
 
     def update_controls(self):
-        h_force: int = 150
+        h_force: int = 100
         j_force: int = 300
         if not self.on_ground:
             h_force /= 5
@@ -82,7 +82,7 @@ class Player(SquarePhysicsEntity, Interactable):
             self.net_force.y -= j_force
 
     def update_speed_cap(self):
-        bound: int = 20
+        bound: int = 25
         if self.velocity.x > bound:
             self.velocity.x = bound
 
