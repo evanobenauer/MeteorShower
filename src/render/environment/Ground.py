@@ -3,9 +3,9 @@ import random
 
 from pygame import Color
 
-from render.Rectangle import RotatedRectangle, Rectangle
-from scene.Scene import Scene
-from util.Vector import Vector
+from src.render.Rectangle import RotatedRectangle, Rectangle
+from src.scene.Scene import Scene
+from src.util.Vector import Vector
 
 class Ground(Rectangle):
 

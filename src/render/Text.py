@@ -4,10 +4,10 @@ import pygame
 from pygame import Color, Surface
 from pygame.font import Font
 
-from util.Vector import Vector
-from scene.Scene import Scene
+from src.util.Vector import Vector
+from src.scene.Scene import Scene
 
-from render.base.Drawable import Drawable
+from src.render.base.Drawable import Drawable
 
 
 class Text(Drawable):

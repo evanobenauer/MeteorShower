@@ -1,10 +1,10 @@
 from pygame import Color
 
-from render.Rectangle import Rectangle
-from render.Text import Text
-from render.base.Interactable import Interactable
-from util.Vector import Vector
-from scene.Scene import Scene
+from src.render.Rectangle import Rectangle
+from src.render.Text import Text
+from src.render.base.Interactable import Interactable
+from src.util.Vector import Vector
+from src.scene.Scene import Scene
 
 class Button(Rectangle, Interactable):
 

@@ -3,10 +3,10 @@ import random
 
 from pygame import Color
 
-from render.base.Drawable import Drawable
-from render.Rectangle import Rectangle, RotatedRectangle
-from scene.Scene import Scene
-from util.Vector import Vector
+from src.render.base.Drawable import Drawable
+from src.render.Rectangle import Rectangle, RotatedRectangle
+from src.scene.Scene import Scene
+from src.util.Vector import Vector
 
 class Background(Drawable):
 

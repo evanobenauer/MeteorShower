@@ -1,15 +1,15 @@
 from pygame import Color
 
-from Window import Window
-from entity.MeteorSpawner import MeteorSpawner, Meteor
-from entity.Player import Player
-from render.Button import Button
-from render.Text import Text
-from render.environment.Background import Background
-from render.environment.Ground import Ground
-from scene.Scene import Scene
-from util.QuickTimer import QuickTimer
-from util.Vector import Vector
+from src.Window import Window
+from src.entity.MeteorSpawner import MeteorSpawner, Meteor
+from src.entity.Player import Player
+from src.render.Button import Button
+from src.render.Text import Text
+from src.render.environment.Background import Background
+from src.render.environment.Ground import Ground
+from src.scene.Scene import Scene
+from src.util.QuickTimer import QuickTimer
+from src.util.Vector import Vector
 
 class GameScene(Scene):
 
@@ -102,7 +102,7 @@ class GameScene(Scene):
         if self.countdown_timer.has_time_passed_s(1) and self.countdown != "" and self.countdown >= 0:
             if self.countdown == 0:
                 self.is_started = True
-                self.countdown = "" #Converts the countdown to an empty string as to not draw it during game end
+                self.countdown = "" #Converts the countdown to an empty string as to not draw it during src end
             else:
                 self.countdown -= 1
             self.countdown_timer.restart()

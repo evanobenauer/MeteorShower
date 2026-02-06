@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a391601a-f7df-49d0-8903-6b0c16f6a6ac" name="Changes" comment="" />
+    <list default="true" id="a391601a-f7df-49d0-8903-6b0c16f6a6ac" name="Changes" comment="Initial Commit - 24hr Game Project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Window.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/MeteorSpawner.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/MeteorSpawner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/PhysicsEntity.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/PhysicsEntity.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entity/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/Button.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/Button.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/Rectangle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/Rectangle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/Text.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/Text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/base/Drawable.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/base/Drawable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/base/Interactable.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/base/Interactable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/environment/Background.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/environment/Background.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/render/environment/Ground.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/render/environment/Ground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene/GameScene.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/GameScene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene/Scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene/TitleScene.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/TitleScene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/QuickTimer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/QuickTimer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/Vector.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Vector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/VectorUtil.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/VectorUtil.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,9 +33,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;evanobenauer&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/evanobenauer/MeteorShower.git&quot;,
+    &quot;accountId&quot;: &quot;b13d5f41-7344-499f-9efd-bc86192eeb4b&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="39GwtpWFirXeoT4vW05fF6ZSwCK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -21,11 +56,44 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.App (1).executor": "Run",
+    "Python.App.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\evanj\PycharmProjects\MeteorShower\game" />
+      <recent name="C:\Users\evanj\PycharmProjects\MeteorShower" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.App (1)">
+    <configuration name="App (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MeteorShower" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/App.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="MeteorShower" />
       <option name="ENV_FILES" value="" />
@@ -39,7 +107,51 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/App.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\evanj\PycharmProjects\MeteorShower\game\App.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MeteorShower" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/game" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\evanj\PycharmProjects\MeteorShower\game\App.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="App" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MeteorShower" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\evanj\PycharmProjects\MeteorShower\App.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -50,6 +162,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.App (1)" />
+        <item itemvalue="Python.App (1)" />
+        <item itemvalue="Python.App (1)" />
         <item itemvalue="Python.App" />
       </list>
     </recent_temporary>
@@ -69,6 +184,19 @@
       <option name="presentableId" value="Default" />
       <updated>1770335933113</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit - 24hr Game Project">
+      <option name="closed" value="true" />
+      <created>1770336118099</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1770336118099</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit - 24hr Game Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit - 24hr Game Project" />
   </component>
 </project>

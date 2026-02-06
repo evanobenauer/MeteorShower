@@ -2,10 +2,10 @@ from abc import ABC
 
 from pygame import Color
 
-from render.base.Drawable import Drawable
-from render.Rectangle import RotatedRectangle
-from util.Vector import Vector
-from scene.Scene import Scene
+from src.render.base.Drawable import Drawable
+from src.render.Rectangle import RotatedRectangle
+from src.util.Vector import Vector
+from src.scene.Scene import Scene
 
 class PhysicsEntity(Drawable, ABC):
 

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from util.Vector import Vector
+from src.util.Vector import Vector
 
 class Drawable(ABC):
 

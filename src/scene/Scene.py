@@ -1,12 +1,11 @@
 from abc import ABC
 
-import pygame
 from pygame import Surface
 
-from render.base.Interactable import Interactable
-from util.Vector import Vector
-from Window import Window
-from render.base.Drawable import Drawable
+from src.render.base.Interactable import Interactable
+from src.util.Vector import Vector
+from src.Window import Window
+from src.render.base.Drawable import Drawable
 
 #A scene is a container for a PyGame surface. Items can be drawn to said surface
 class Scene(ABC):

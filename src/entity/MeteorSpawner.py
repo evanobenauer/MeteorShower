@@ -2,11 +2,11 @@ import random
 
 from pygame import Color
 
-from entity.PhysicsEntity import SquarePhysicsEntity
-from entity.Player import Player
-from scene.Scene import Scene
-from util.QuickTimer import QuickTimer
-from util.Vector import Vector
+from src.entity.PhysicsEntity import SquarePhysicsEntity
+from src.entity.Player import Player
+from src.scene.Scene import Scene
+from src.util.QuickTimer import QuickTimer
+from src.util.Vector import Vector
 
 
 class MeteorSpawner:

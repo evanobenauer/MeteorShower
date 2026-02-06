@@ -1,11 +1,11 @@
 from pygame import Color
 
-from render.Text import Text, TextBounceHandler
-from render.environment.Background import Background
-from scene.GameScene import GameScene
-from util.Vector import Vector
-from render.Button import Button
-from scene.Scene import Scene
+from src.render.Text import Text, TextBounceHandler
+from src.render.environment.Background import Background
+from src.scene.GameScene import GameScene
+from src.util.Vector import Vector
+from src.render.Button import Button
+from src.scene.Scene import Scene
 
 class TitleScene(Scene):
 
